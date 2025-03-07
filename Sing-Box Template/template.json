@@ -46,7 +46,7 @@
             }
         ],
         "final": "dns-remote",
-        "independent_cache": false
+        "independent_cache": true
     },
     "inbounds": [
         {
@@ -55,7 +55,7 @@
             "domain_strategy": "prefer_ipv4",
             "interface_name": "sing-tun",
             "inet4_address": "172.19.0.1/30",
-            "mtu": 1492,
+            "mtu": 1280,
             "auto_route": true,
             "strict_route": true,
             "stack": "system",

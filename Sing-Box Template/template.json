@@ -22,23 +22,10 @@
         "servers": [
             {
                 "tag": "dns-remote",
-                "address": "udp://192.168.1.165:53",
-                "address_resolver": "dns-direct",
+                "address": "127.0.0.1",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
                 "detour": "direct"
-            },
-            {
-                "tag": "dns-direct",
-                "address": "udp://127.0.0.1:53",
-                "address_resolver": "dns-local",
-                "strategy": "prefer_ipv4",
-                "detour": "direct"
-            },
-            {
-                "tag": "dns-local",
-                "address": "local",
-                "detour": "bypass"
             },
             {
                 "tag": "dns-block",

@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
     paths:
       - 'warp.py'
-      - 'Sing-Box Template\template.json'
+      - 'Sing-Box Template/template.json'
   schedule:
     - cron: '0 0,12 * * *'
   workflow_dispatch:

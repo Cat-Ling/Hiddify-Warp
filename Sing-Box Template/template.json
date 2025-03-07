@@ -25,7 +25,7 @@
                 "address": "udp://127.0.0.1:53",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
-                "detour": "bypass"
+                "detour": "direct"
             },
             {
                 "tag": "dns-block",
@@ -33,7 +33,7 @@
             }
         ],
         "final": "dns-remote",
-        "independent_cache": true
+        "independent_cache": false
     },
     "inbounds": [
         {

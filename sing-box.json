@@ -22,7 +22,7 @@
         "servers": [
             {
                 "tag": "dns-remote",
-                "address": "udp://127.0.0.1:53",
+                "address": "udp://192.168.1.165:53",
                 "address_resolver": "dns-direct",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
@@ -30,7 +30,7 @@
             },
             {
                 "tag": "dns-direct",
-                "address": "udp://192.168.1.165:53",
+                "address": "udp://127.0.0.1:53",
                 "address_resolver": "dns-local",
                 "strategy": "prefer_ipv4",
                 "detour": "direct"
@@ -43,15 +43,6 @@
             {
                 "tag": "dns-block",
                 "address": "rcode://success"
-            }
-        ],
-        "rules": [
-            {
-                "rule_set": [
-                    "geosite-ir"
-                ],
-                "domain_suffix": ".ir",
-                "server": "dns-direct"
             }
         ],
         "final": "dns-remote",
@@ -100,19 +91,19 @@
         {
             "tag": "WARP-MAIN",
             "type": "wireguard",
-            "server": "188.114.98.129",
-            "server_port": 4500,
+            "server": "162.159.192.42",
+            "server_port": 3854,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "SFRrD+34uGN6y9Yr0cmJK8Pf7tBMc4jpbNwYLWBTp2s=",
+            "private_key": "CLY1UreHalCp+Swplgv1M+3ee0zuEoIo4xrWCVLcUUg=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                131,
-                190,
-                88
+                73,
+                216,
+                175
             ],
             "detour": "direct",
             "workers": 2
@@ -120,19 +111,19 @@
         {
             "tag": "WARP-WIW",
             "type": "wireguard",
-            "server": "162.159.195.251",
+            "server": "188.114.98.82",
             "server_port": 4500,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "0Oe4HGoGeHA584DotFZkFUw+tAAq8x4Llbuqh680x3w=",
+            "private_key": "cCszmE1KlHaS7uLaGwSEgq6t2abAwqWmH5G9yLr83VA=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                239,
-                82,
-                110
+                196,
+                1,
+                118
             ],
             "detour": "WARP-MAIN",
             "workers": 2

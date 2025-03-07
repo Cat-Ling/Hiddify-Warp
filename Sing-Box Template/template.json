@@ -24,14 +24,12 @@
                 "tag": "dns-remote",
                 "address": "https://1.1.1.1/dns-query",
                 "address_resolver": "dns-direct",
-                "address_strategy": "prefer_ipv4",
-                "strategy": "prefer_ipv4"
+                "address_strategy": "ipv4_only"
             },
             {
                 "tag": "dns-direct",
                 "address": "tcp://8.8.8.8",
                 "address_resolver": "dns-local",
-                "strategy": "prefer_ipv4",
                 "detour": "direct"
             },
             {
@@ -104,6 +102,7 @@
     "route": {
         "auto_detect_interface": true,
         "override_android_vpn": true,
+        "strategy": "ipv4_only",
         "final": "Proxy",
         "rules": [
             {

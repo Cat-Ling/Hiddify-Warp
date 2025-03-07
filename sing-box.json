@@ -22,10 +22,10 @@
         "servers": [
             {
                 "tag": "dns-remote",
-                "address": "127.0.0.1",
+                "address": "udp://127.0.0.1:53",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
-                "detour": "direct"
+                "detour": "bypass"
             },
             {
                 "tag": "dns-block",
@@ -78,19 +78,19 @@
         {
             "tag": "WARP-MAIN",
             "type": "wireguard",
-            "server": "188.114.97.151",
-            "server_port": 1387,
+            "server": "188.114.96.117",
+            "server_port": 4500,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "KMmCtryTO2dDYmnOkX7p7AloibO0nyVWGNzY/U0FGUE=",
+            "private_key": "OCAfO5RtECJO7wCkBIXxg+r8m9IL9HoqHqen45eL30U=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                135,
-                33,
-                110
+                92,
+                238,
+                39
             ],
             "detour": "direct",
             "workers": 2
@@ -98,19 +98,19 @@
         {
             "tag": "WARP-WIW",
             "type": "wireguard",
-            "server": "162.159.195.245",
-            "server_port": 859,
+            "server": "188.114.97.131",
+            "server_port": 4500,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "mAn0UAbniTIqo5Iq4tJAllHODr2abyKMqGfZPNqIAH4=",
+            "private_key": "aKoNrsglwWsSUmWtld5WV5OiONB22audw13sC81ZL2c=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                253,
-                194,
-                96
+                164,
+                102,
+                221
             ],
             "detour": "WARP-MAIN",
             "workers": 2

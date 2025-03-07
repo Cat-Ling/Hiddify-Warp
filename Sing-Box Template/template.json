@@ -22,7 +22,7 @@
         "servers": [
             {
                 "tag": "dns-remote",
-                "address": "udp://127.0.0.1:53",
+                "address": "udp://192.168.1.165:53",
                 "address_resolver": "dns-direct",
                 "address_strategy": "prefer_ipv4",
                 "strategy": "prefer_ipv4",
@@ -30,7 +30,7 @@
             },
             {
                 "tag": "dns-direct",
-                "address": "udp://192.168.1.165:53",
+                "address": "udp://127.0.0.1:53",
                 "address_resolver": "dns-local",
                 "strategy": "prefer_ipv4",
                 "detour": "direct"
@@ -43,15 +43,6 @@
             {
                 "tag": "dns-block",
                 "address": "rcode://success"
-            }
-        ],
-        "rules": [
-            {
-                "rule_set": [
-                    "geosite-ir"
-                ],
-                "domain_suffix": ".ir",
-                "server": "dns-direct"
             }
         ],
         "final": "dns-remote",

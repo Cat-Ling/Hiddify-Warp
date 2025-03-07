@@ -79,7 +79,7 @@ def toSingBox(tag, clean_ip, detour):
             "mtu": 1384,
             "reserved": data['config']['reserved'],
             "detour": detour,
-            "workers": 2
+            "workers": 4
         }
         os.remove("api.sh")
         return wg

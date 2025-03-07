@@ -49,13 +49,13 @@
         {
             "type": "tun",
             "tag": "tun-in",
-            "domain_strategy": "prefer_ipv4",
+            "domain_strategy": "ipv4_only",
             "interface_name": "sing-tun",
             "inet4_address": "172.19.0.1/30",
             "mtu": 1280,
             "auto_route": true,
             "strict_route": true,
-            "stack": "gvisor",
+            "stack": "system",
             "endpoint_independent_nat": true,
             "sniff": true,
             "sniff_override_destination": false
@@ -102,7 +102,6 @@
     "route": {
         "auto_detect_interface": true,
         "override_android_vpn": true,
-        "strategy": "ipv4_only",
         "final": "Proxy",
         "rules": [
             {

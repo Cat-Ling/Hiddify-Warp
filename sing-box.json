@@ -22,10 +22,22 @@
         "servers": [
             {
                 "tag": "dns-remote",
-                "address": "udp://127.0.0.1:53",
+                "address": "https://1.1.1.1/dns-query",
+                "address_resolver": "dns-direct",
                 "address_strategy": "prefer_ipv4",
+                "strategy": "prefer_ipv4"
+            },
+            {
+                "tag": "dns-direct",
+                "address": "tcp://8.8.8.8",
+                "address_resolver": "dns-local",
                 "strategy": "prefer_ipv4",
                 "detour": "direct"
+            },
+            {
+                "tag": "dns-local",
+                "address": "local",
+                "detour": "bypass"
             },
             {
                 "tag": "dns-block",
@@ -78,19 +90,19 @@
         {
             "tag": "WARP-MAIN",
             "type": "wireguard",
-            "server": "188.114.97.181",
-            "server_port": 7103,
+            "server": "188.114.97.250",
+            "server_port": 4500,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "uE1LRvY9ka6Gqkglgpi8Pf1SQKSlWiw9IKy7djDaOkc=",
+            "private_key": "UIjIy9DmCdlo9DPbSe21Wmj8UZw/2KDDYsPcuY/KhXk=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                157,
-                9,
-                179
+                174,
+                96,
+                124
             ],
             "detour": "direct",
             "workers": 2
@@ -98,19 +110,19 @@
         {
             "tag": "WARP-WIW",
             "type": "wireguard",
-            "server": "188.114.99.83",
-            "server_port": 4233,
+            "server": "162.159.195.131",
+            "server_port": 4500,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "EI8745XM6opUylhLP9MQC+NJguCHLXzt10kS8RqvyFQ=",
+            "private_key": "6MWblqb17HTdRQFSYpjQvJp0EDrIgcPFO0M54VAJZUg=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                50,
-                180,
-                42
+                209,
+                156,
+                86
             ],
             "detour": "WARP-MAIN",
             "workers": 2

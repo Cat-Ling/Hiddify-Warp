@@ -55,7 +55,7 @@
             "mtu": 1280,
             "auto_route": true,
             "strict_route": true,
-            "stack": "system",
+            "stack": "gvisor",
             "endpoint_independent_nat": true,
             "sniff": true,
             "sniff_override_destination": false
@@ -88,19 +88,19 @@
         {
             "tag": "WARP-MAIN",
             "type": "wireguard",
-            "server": "162.159.195.207",
-            "server_port": 939,
+            "server": "188.114.97.54",
+            "server_port": 955,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "qKAk6YYGOgpj6KbWAgQDU5NDJzrB9qY0StoTcVSJ4G4=",
+            "private_key": "UDKEw4LX4WMggepL5OgjVcOMkD0u9sY3NjCeqoO3d0M=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                185,
-                86,
-                198
+                8,
+                158,
+                119
             ],
             "detour": "direct",
             "workers": 4
@@ -108,19 +108,19 @@
         {
             "tag": "WARP-WIW",
             "type": "wireguard",
-            "server": "188.114.96.91",
-            "server_port": 3581,
+            "server": "188.114.98.188",
+            "server_port": 939,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "YCkx9fuGN+5BVLPY5vNnR0W+A604FrQeKEMzbGIWHnI=",
+            "private_key": "mNZnPc6aVjbD1O33qqcyXzNrk19ooefgofdk6ljcmm8=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                110,
-                182,
-                79
+                227,
+                74,
+                180
             ],
             "detour": "WARP-MAIN",
             "workers": 4

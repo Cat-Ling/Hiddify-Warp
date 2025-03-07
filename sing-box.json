@@ -49,13 +49,13 @@
         {
             "type": "tun",
             "tag": "tun-in",
-            "domain_strategy": "prefer_ipv4",
+            "domain_strategy": "ipv4_only",
             "interface_name": "sing-tun",
             "inet4_address": "172.19.0.1/30",
             "mtu": 1280,
             "auto_route": true,
             "strict_route": true,
-            "stack": "gvisor",
+            "stack": "system",
             "endpoint_independent_nat": true,
             "sniff": true,
             "sniff_override_destination": false
@@ -88,19 +88,19 @@
         {
             "tag": "WARP-MAIN",
             "type": "wireguard",
-            "server": "188.114.98.206",
-            "server_port": 4500,
+            "server": "162.159.195.207",
+            "server_port": 939,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "gNAngY0WhVMZ9irjcaMWw9Q+QT7R7vLe6qzD5uiIQEg=",
+            "private_key": "qKAk6YYGOgpj6KbWAgQDU5NDJzrB9qY0StoTcVSJ4G4=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                247,
-                80,
-                184
+                185,
+                86,
+                198
             ],
             "detour": "direct",
             "workers": 4
@@ -108,19 +108,19 @@
         {
             "tag": "WARP-WIW",
             "type": "wireguard",
-            "server": "188.114.96.171",
-            "server_port": 894,
+            "server": "188.114.96.91",
+            "server_port": 3581,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "CJwv1NntyBfeSv9H+HxwFyEbGGoshpFyQ1KevQ7Wl0I=",
+            "private_key": "YCkx9fuGN+5BVLPY5vNnR0W+A604FrQeKEMzbGIWHnI=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                64,
-                129,
-                235
+                110,
+                182,
+                79
             ],
             "detour": "WARP-MAIN",
             "workers": 4
@@ -145,7 +145,6 @@
     "route": {
         "auto_detect_interface": true,
         "override_android_vpn": true,
-        "strategy": "ipv4_only",
         "final": "Proxy",
         "rules": [
             {

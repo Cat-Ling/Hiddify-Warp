@@ -20,7 +20,8 @@ def arch_suffix():
         raise ValueError("Unsupported CPU architecture")
 
 def export_bestIPS(path):
-    best_ips = []
+    preferred_ips = []
+    fallback_ips = []
     used_ranges = set()
 
     with open(path, 'r') as csv_file:
@@ -29,17 +30,24 @@ def export_bestIPS(path):
             ip = line.split(',')[0]
             range_prefix = "".join(ip.split('.')[:3])  # Extract first three octets
             
-            if range_prefix not in used_ranges:
-                used_ranges.add(range_prefix)
-                best_ips.append(ip)
-
-            if len(best_ips) >= 50:
+            if range_prefix in used_ranges:
+                continue
+            
+            used_ranges.add(range_prefix)
+            if ip.startswith("162."):
+                fallback_ips.append(ip)
+            else:
+                preferred_ips.append(ip)
+            
+            if len(preferred_ips) >= 50:
                 break
-
+    
+    best_ips = preferred_ips + fallback_ips[:max(0, 50 - len(preferred_ips))]
+    
     with open('best_IPS.txt', 'w') as f:
         for ip in best_ips:
             f.write(f"{ip}\n")
-
+    
     os.remove("warp")
     return best_ips
 

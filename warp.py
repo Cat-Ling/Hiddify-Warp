@@ -20,34 +20,17 @@ def arch_suffix():
         raise ValueError("Unsupported CPU architecture")
 
 def export_bestIPS(path):
-    preferred_ips = []
-    fallback_ips = []
-    used_ranges = set()
-
+    best_ips = []
     with open(path, 'r') as csv_file:
         next(csv_file)  # Skip header
         for line in csv_file:
             ip = line.split(',')[0]
-            range_prefix = "".join(ip.split('.')[:3])  # Extract first three octets
-            
-            if range_prefix in used_ranges:
-                continue
-            
-            used_ranges.add(range_prefix)
-            if ip.startswith("162."):
-                fallback_ips.append(ip)
-            else:
-                preferred_ips.append(ip)
-            
-            if len(preferred_ips) >= 50:
+            best_ips.append(ip)
+            if len(best_ips) >= 50:
                 break
-    
-    best_ips = preferred_ips + fallback_ips[:max(0, 50 - len(preferred_ips))]
-    
     with open('best_IPS.txt', 'w') as f:
         for ip in best_ips:
             f.write(f"{ip}\n")
-    
     os.remove("warp")
     return best_ips
 
@@ -100,10 +83,14 @@ def export_SingBox(t_ips):
     
     data['outbounds'][1]['outbounds'].extend(['WARP-MAIN', 'WARP-WIW'])
     
-    main_wg = toSingBox('WARP-MAIN', t_ips[0], "direct")
+    prioritized_ips = [ip for ip in t_ips if not ip.startswith("162.")]
+    deprioritized_ips = [ip for ip in t_ips if ip.startswith("162.")]
+    ordered_ips = prioritized_ips + deprioritized_ips
+    
+    main_wg = toSingBox('WARP-MAIN', ordered_ips[0], "direct")
     data["outbounds"].insert(2, main_wg)
     
-    wiw_ip = random.choice(t_ips[1:])
+    wiw_ip = random.choice(ordered_ips[1:])
     wiw_wg = toSingBox('WARP-WIW', wiw_ip, "WARP-MAIN")
     data["outbounds"].insert(3, wiw_wg)
     

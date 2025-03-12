@@ -6,7 +6,7 @@
     },
     "experimental": {
         "clash_api": {
-            "external_controller": "0.0.0.0:9096",
+            "external_controller": "0.0.0.0:9090",
             "external_ui": "metacubexd",
             "external_ui_download_url": "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
             "external_ui_download_detour": "direct",
@@ -96,19 +96,19 @@
         {
             "tag": "WARP-MAIN",
             "type": "wireguard",
-            "server": "188.114.96.246",
-            "server_port": 864,
+            "server": "188.114.96.178",
+            "server_port": 4198,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "WDJPR4PuUohVDOWcJPyaVs5b25dBSfH4vHk4j4npOW0=",
+            "private_key": "wGWdglMjS4IWaV5Xs5qdiu0dkDzQWTCwta46Qq7P5nA=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                221,
-                182,
-                102
+                175,
+                203,
+                132
             ],
             "detour": "direct",
             "workers": 4
@@ -116,19 +116,19 @@
         {
             "tag": "WARP-WIW",
             "type": "wireguard",
-            "server": "188.114.97.97",
-            "server_port": 4198,
+            "server": "188.114.96.213",
+            "server_port": 3854,
             "local_address": [
                 "172.16.0.2/32",
                 "2606:4700:110:8735:bb29:91bc:1c82:aa73/128"
             ],
-            "private_key": "EL3qDooE98PIr1RfzGX4TZVuuYV71Tgb4r3zlhrvAW8=",
+            "private_key": "2NSTOhEKaiXK2mGSQbaE3UBfsZGdiVBVjrfWR5gd61w=",
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
             "mtu": 1384,
             "reserved": [
-                95,
-                239,
-                20
+                2,
+                218,
+                21
             ],
             "detour": "WARP-MAIN",
             "workers": 4

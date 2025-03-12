@@ -61,12 +61,12 @@
             "sniff_override_destination": false
         },
         {
+            "listen": "0.0.0.0",
+            "listen_port": 1090,
+            "udp_timeout": 3000,
             "type": "mixed",
             "tag": "mixed-in",
-            "listen": "0.0.0.0",
-            "port": 1090,
-            "sniff": true,
-            "sniff_override_destination": true
+            "tcp_fast_open": true
         }
     ],
     "outbounds": [

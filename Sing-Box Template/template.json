@@ -63,10 +63,15 @@
         {
             "listen": "0.0.0.0",
             "listen_port": 1080,
-            "udp_timeout": 3000,
             "type": "mixed",
             "tag": "mixed-in",
-            "tcp_fast_open": true
+            "tcp_fast_open": true,
+            "tcp_multi_path": true,
+            "udp_fragment": false,
+            "udp_timeout": "5m",
+            "sniff": true,
+            "sniff_override_destination": false,
+            "domain_strategy": "ipv4_only"
         }
     ],
     "outbounds": [

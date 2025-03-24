@@ -67,10 +67,10 @@ def toSingBox(tag, clean_ip, detour):
             ],
             "private_key": data['private_key'],
             "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-            "mtu": 1280,
+            "mtu": 1432,
             "reserved": data['config']['reserved'],
             "detour": detour,
-            "workers": 2
+            "workers": 4
         }
         os.remove("api.sh")
         return wg

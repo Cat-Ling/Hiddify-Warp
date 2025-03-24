@@ -13,7 +13,7 @@
             "default_mode": "global"
         },
         "cache_file": {
-            "enabled": true,
+            "enabled": false,
             "path": "cache.db",
             "store_fakeip": false
         }

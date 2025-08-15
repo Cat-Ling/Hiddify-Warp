@@ -83,19 +83,16 @@ def export_SingBox(t_ips):
     
     data['outbounds'][1]['outbounds'].extend(['WARP-MAIN', 'WARP-WIW'])
     
-    prioritized_ips = [ip for ip in t_ips if not ip.startswith("162.")]
-    deprioritized_ips = [ip for ip in t_ips if ip.startswith("162.")]
-    ordered_ips = prioritized_ips + deprioritized_ips
-    
-    main_wg = toSingBox('WARP-MAIN', ordered_ips[0], "direct")
+    main_wg = toSingBox('WARP-MAIN', t_ips[0], "direct")
     data["outbounds"].insert(2, main_wg)
     
-    wiw_ip = random.choice(ordered_ips[1:])
+    wiw_ip = random.choice(t_ips[1:]) if len(t_ips) > 1 else t_ips[0]
     wiw_wg = toSingBox('WARP-WIW', wiw_ip, "WARP-MAIN")
     data["outbounds"].insert(3, wiw_wg)
     
     with open('sing-box.json', 'w') as f:
         f.write(json.dumps(data, indent=4))
+
 
 def main(script_dir):
     arch = arch_suffix()
@@ -122,4 +119,5 @@ def main(script_dir):
 if __name__ == '__main__':
     script_directory = os.path.dirname(__file__)
     main(script_directory)
+
 
